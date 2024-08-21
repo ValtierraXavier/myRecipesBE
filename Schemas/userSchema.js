@@ -4,8 +4,6 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique: true,
-        select: true
     },
     userName: {
         type: String,
@@ -20,7 +18,8 @@ const userSchema = new mongoose.Schema({
         select: false
     },
     joined: {
-        type: String,
+        type: Date,
+        default: Date.now,
         select: true
     },
     settings: {

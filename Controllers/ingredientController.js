@@ -1,5 +1,5 @@
 import Ingredient from "../Schemas/IngredientsSchema.js";
-import User from "../Schemas/userSchema.js";
+import Recipe from "../Schemas/recipeSchema.js";
 
 export const getAllIngredients = async (req, res) => {
     try{
@@ -47,4 +47,17 @@ export const deleteIngredient = async (req, res) => {
             "Record does not exist."}`
         )
     }catch(error){console.log(error.message)}
+}
+
+export const deleteAllIngredients = async (req, res) => {
+    const prev = await Ingredient.find({})
+    const deleteAll = await Ingredient.deleteMany()
+    console.log(deleteAll)
+    res.send(
+        `${
+            deleteAll.deletedCount?
+            `deleted ${prev}`:
+            "Database is already empty."
+        }`
+    )
 }

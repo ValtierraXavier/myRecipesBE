@@ -37,7 +37,7 @@ export const editRecipe = async (req, res) => {
 export const deleteRecipe = async (req, res) => {
     const id = req.params.id
     try{
-        const deleted = Recipe.findByIdAndDelete(id)
+        const deleted = await Recipe.findByIdAndDelete(id)
         res.send(`${
             deleted?
             `deleted ${deleted}`:

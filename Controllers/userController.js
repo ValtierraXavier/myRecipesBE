@@ -7,7 +7,7 @@ const tokenKey = 'xavier.valtierra.enc'
 
 export const getAllUsers = async (req, res) => {
      try{
-        const allUsers = User.find({})
+        const allUsers = await User.find({})
         res.send(allUsers)
     }catch(error){console.log(error.message)}
 }
@@ -15,7 +15,7 @@ export const getAllUsers = async (req, res) => {
 export const getUser = async (req, res) => {
     const id = req.params.id
      try{
-        const user = User.findById(id)
+        const user = await User.findById(id)
         res.send(user)
     }catch(error){console.log(error.message)}
 }
@@ -43,7 +43,7 @@ export const editUser = async (req, res) => {
 export const deleteUser = async (req, res) => {
     const id = req.params.id
      try{
-        const deleted = User.findByIdAndDelete(id)
+        const deleted = await User.findByIdAndDelete(id)
         res.send(`${
             deleted?
             `deleted ${deleted}`:

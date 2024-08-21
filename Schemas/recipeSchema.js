@@ -9,11 +9,9 @@ const recipeSchema = new mongoose.Schema({
         },
         prepTime: {
             type: Number,
-            required: false
         },
         cookTime: {
             type: Number,
-            required: false
         },
         ingredients: [{
             type: mongoose.Schema.Types.ObjectId,
