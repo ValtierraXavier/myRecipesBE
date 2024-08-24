@@ -1,6 +1,7 @@
 import Recipe from '../Schemas/recipeSchema.js'
 
 export const getAllRecipes = async (req, res) => {
+    console.log("Triggered recipe")
     try{
         const allrecipes = await Recipe.find({})
         res.send(allrecipes)

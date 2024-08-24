@@ -2,6 +2,7 @@ import Ingredient from "../Schemas/IngredientsSchema.js";
 import Recipe from "../Schemas/recipeSchema.js";
 
 export const getAllIngredients = async (req, res) => {
+    console.log("Triggered ingredients")
     try{
         const ingredients = await Ingredient.find()
         res.send(ingredients)

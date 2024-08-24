@@ -20,11 +20,10 @@ const userSchema = new mongoose.Schema({
     joined: {
         type: Date,
         default: Date.now,
-        select: true
+        select: false
     },
     settings: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Settings',
+        type: Object,
         select: true
     },
     recipes: [{

@@ -8,6 +8,6 @@ router.get('/:id', controller.getIngredient)
 router.post('/new', controller.newIngredient)
 router.put('/edit/:id', controller.editIngredient)
 router.delete('/delete/:id', controller.deleteIngredient)
-router.delete('/deleteall/', controller.deleteAllIngredients)
+router.delete('/deleteall', controller.deleteAllIngredients)
 
 export default router
